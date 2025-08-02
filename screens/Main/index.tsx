@@ -48,7 +48,7 @@ export default function MainScreen() {
       <S.Container>
         <S.Header>CodeLeap Network</S.Header>
         <S.Card>
-          <S.Label>What’s on your mind?</S.Label>
+          <S.Label>{"What's on your mind?"}</S.Label>
           <PostForm
             title={title}
             setTitle={setTitle}
