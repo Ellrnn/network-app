@@ -1,4 +1,4 @@
-import MainScreen from "../screens/Main";
+import MainScreen from "@/features/posts/screens/MainScreen";
 
 export default function Main() {
   return <MainScreen />;
