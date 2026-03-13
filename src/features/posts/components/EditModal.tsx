@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from "react-native-modal";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 import { colors } from "@/constants/colors";
 import { StyledButton } from "@/components/Button";
@@ -40,32 +41,41 @@ export function EditModal({ isVisible, onClose, post }: EditModalProps) {
 
   return (
     <Modal testID="edit-modal" isVisible={isVisible} onBackdropPress={() => {}}>
-      <S.Card>
-        <S.Label>Edit Item</S.Label>
+      <KeyboardAwareScrollView
+        contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+        keyboardShouldPersistTaps="handled"
+        bottomOffset={62}
+        enabled
+        extraKeyboardSpace={20}
+        showsVerticalScrollIndicator={false}
+      >
+        <S.Card>
+          <S.Label>Edit Item</S.Label>
 
-        <EditForm
-          title={title}
-          setTitle={setTitle}
-          content={content}
-          setContent={setContent}
-        />
-        <S.ButtonRow>
-          <StyledButton
-            testID="cancel-edit-button"
-            variant="outline"
-            onPress={onClose}
-          >
-            <S.ButtonText>Cancel</S.ButtonText>
-          </StyledButton>
-          <StyledButton
-            testID="save-edit-button"
-            variant="success"
-            onPress={handleSave}
-          >
-            <S.ButtonText style={{ color: colors.white }}>Save</S.ButtonText>
-          </StyledButton>
-        </S.ButtonRow>
-      </S.Card>
+          <EditForm
+            title={title}
+            setTitle={setTitle}
+            content={content}
+            setContent={setContent}
+          />
+          <S.ButtonRow>
+            <StyledButton
+              testID="cancel-edit-button"
+              variant="outline"
+              onPress={onClose}
+            >
+              <S.ButtonText>Cancel</S.ButtonText>
+            </StyledButton>
+            <StyledButton
+              testID="save-edit-button"
+              variant="success"
+              onPress={handleSave}
+            >
+              <S.ButtonText style={{ color: colors.white }}>Save</S.ButtonText>
+            </StyledButton>
+          </S.ButtonRow>
+        </S.Card>
+      </KeyboardAwareScrollView>
     </Modal>
   );
 }

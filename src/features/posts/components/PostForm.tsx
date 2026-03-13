@@ -1,5 +1,5 @@
-import { colors } from "@/constants/colors";
 import { StyledInput } from "@/components/Input";
+import { colors } from "@/constants/colors";
 
 import * as S from "./PostForm.styles";
 

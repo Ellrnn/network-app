@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { useRouter } from "expo-router";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { useState } from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 import { colors } from "@/constants/colors";
 import { useUser } from "@/hooks/useUser";
@@ -30,8 +30,9 @@ export default function SignupScreen() {
         alignItems: "center",
         padding: 20,
       }}
-      enableOnAndroid
-      extraScrollHeight={20}
+      bottomOffset={62}
+      enabled
+      extraKeyboardSpace={20}
     >
       <UsernameForm
         username={username}

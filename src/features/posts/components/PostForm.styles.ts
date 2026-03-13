@@ -6,6 +6,7 @@ export const TextArea = s.TextInput`
   border: 1px solid ${colors.border};
   border-radius: 8px;
   padding: 8px;
+  text-align-vertical: top;
   min-height: 80px;
   margin-bottom: 12px;
   font-size: 14px;
