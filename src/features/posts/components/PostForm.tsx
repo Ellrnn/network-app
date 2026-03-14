@@ -25,7 +25,7 @@ export function PostForm({
       <S.Label>Title</S.Label>
       <StyledInput
         testID={titleTestId}
-        placeholder="Hello Word"
+        placeholder="Hello World"
         value={title}
         onChangeText={setTitle}
         placeholderTextColor={colors.placeholder}

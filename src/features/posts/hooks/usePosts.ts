@@ -9,6 +9,8 @@ import { CreatePostInput, UpdatePostInput } from "@/features/posts/types";
 
 export const postsQueryKeys = {
   all: ["posts"] as const,
+  list: ["posts", "list"] as const,
+  interactions: ["interactions"] as const,
 };
 
 export function usePostsQuery() {

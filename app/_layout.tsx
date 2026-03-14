@@ -18,7 +18,8 @@ export default function RootLayout() {
   return (
     <AppProviders>
       <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
-        <Stack>
+        <Stack screenOptions={{ animation: "fade" }}>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="signup" options={{ headerShown: false }} />
           <Stack.Screen name="main" options={{ headerShown: false }} />
         </Stack>

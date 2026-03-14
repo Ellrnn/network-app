@@ -9,12 +9,23 @@ type PostApiModel = {
 };
 
 type PostsListResponse = {
+  count: number;
+  next: string | null;
+  previous: string | null;
   results: PostApiModel[];
 };
 
 export async function fetchPostsRequest() {
   const response = await apiClient.get<PostsListResponse>("/");
   return response.data.results;
+}
+
+export async function fetchPostsPageRequest(params: {
+  limit: number;
+  offset: number;
+}) {
+  const response = await apiClient.get<PostsListResponse>("/", { params });
+  return response.data;
 }
 
 export async function createPostRequest(payload: {

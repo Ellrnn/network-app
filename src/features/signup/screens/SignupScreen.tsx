@@ -18,7 +18,7 @@ export default function SignupScreen() {
     }
 
     saveUsername(username.trim());
-    router.push("/main");
+    router.replace("/main");
   };
 
   return (

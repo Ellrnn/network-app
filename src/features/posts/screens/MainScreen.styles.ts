@@ -1,4 +1,3 @@
-import { Text } from "react-native";
 import s from "styled-components/native";
 
 import { colors } from "@/constants/colors";
@@ -8,13 +7,20 @@ export const Container = s.View`
   background-color: ${colors.background};
 `;
 
-export const Header: typeof Text = s(Text)`
+export const HeaderRow = s.View`
   background-color: ${colors.primary};
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Header = s.Text`
   color: ${colors.white};
   font-size: 22px;
   font-weight: bold;
   text-align: left;
   padding: 16px;
+  flex: 1;
 `;
 
 export const Card = s.View`
